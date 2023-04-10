@@ -2,7 +2,7 @@ import { Autocomplete, Button, TextField } from "@mui/material";
 import { useState, useEffect, Dispatch, SetStateAction } from "react";
 import axios from "axios";
 import styled from "../../styles/FipeTable.module.css";
-import { useFipeContext } from "@/src/contextApi/fipe-context";
+import { useFipeContext } from "../../contextApi/fipe-context";
 
 type Marca = {
   codigo: string;

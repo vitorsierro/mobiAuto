@@ -1,6 +1,7 @@
-import { useFipeContext } from '@/src/contextApi/fipe-context';
+
+import { useFipeContext } from "../../contextApi/fipe-context";
 import Typography from '@mui/material/Typography';
-import styled from "@/src/styles/FipeTable.module.css";
+import styled from "../../styles/FipeTable.module.css";
 
 export default function ModalSuccecs() {
     const {dados} = useFipeContext()
