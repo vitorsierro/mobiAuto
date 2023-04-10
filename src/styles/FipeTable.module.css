@@ -1,0 +1,46 @@
+.header {
+  margin-bottom: 1rem;
+}
+
+.fipeTable {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  margin: auto;
+}
+
+.linkBusca {
+  margin-bottom: 2rem;
+}
+
+.search {
+  display: flex;
+  justify-content: space-between;
+  width: 420px;
+  margin-top: 1rem;
+}
+
+.selectedBox {
+  margin-bottom: 2rem;
+}
+
+.mainConteudo {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.modalSuccecs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0rem;
+  background-color: #bee6be;
+}
+.label {
+  background-color: #20bb49;
+  padding: 1rem;
+  border-radius: 5rem;
+}
