@@ -1,7 +1,8 @@
 import axios from "axios";
 import Image from "next/image";
 import { Fragment, Key, useEffect, useState } from "react";
-import translate from "translate";
+
+const translate = require('translate');
 
 translate.engine = "google";
 translate.key = process.env.GOOGLE_KEY;
