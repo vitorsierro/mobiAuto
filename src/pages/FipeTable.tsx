@@ -4,6 +4,7 @@ import BuscaSemAno from "../components/BuscaSemAno/BuscaSemAno";
 import styled from "../styles/FipeTable.module.css";
 import Button from "@mui/material/Button";
 import ModalSuccecs from "../components/Modal/ModalSuccecs";
+import { FipeProvider } from "../contextApi/fipe-context";
 
 
 export default function FipeTable() {
@@ -13,6 +14,7 @@ export default function FipeTable() {
 
 
   return (
+    <FipeProvider>
     <div className={styled.fipeTable}>
       <header className={styled.header}>
         <ul className={styled.search}>
@@ -52,5 +54,6 @@ export default function FipeTable() {
         )}
       </main>
     </div>
+    </FipeProvider>
   );
 }
