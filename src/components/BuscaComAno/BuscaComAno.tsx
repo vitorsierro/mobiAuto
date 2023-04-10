@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction, useEffect, useState } from "react"
 import { Autocomplete, Button, TextField } from "@mui/material"
 import styled from "../../styles/FipeTable.module.css"
 import axios from "axios"
+import { useFipeContext } from "@/src/contextApi/fipe-context";
 
 type Marca = {
   codigo: string;
@@ -24,24 +25,12 @@ type Preco = {
   ano: string
 };
 
-type data = {
-  TipoVeiculo: number;
-  Valor: string;
-  Marca: string;
-  Modelo: string;
-  AnoModelo: number;
-  Combustivel: string;
-  CodigoFipe: string;
-  MesReferencia: string;
-  SiglaCombustivel: string;
-};
-
 type Props = {
-  setDados: Dispatch<SetStateAction<data | undefined>>
   setIsModal: Dispatch<SetStateAction<boolean>>
 };
 
-export default function BuscaComAno({ setDados, setIsModal  }: Props) {
+export default function BuscaComAno({  setIsModal  }: Props) {
+  const {saveDados} = useFipeContext();
   const [marcas, setMarcas] = useState<Marca[]>([]);
   const [modelos, setModelos] = useState<Modelo[]>([]);
   const [anos, setAnos] = useState<Anos[]>([]);
@@ -103,7 +92,7 @@ export default function BuscaComAno({ setDados, setIsModal  }: Props) {
         `https://parallelum.com.br/fipe/api/v1/carros/marcas/${
           preco.marca || "0"
         }/modelos/${preco.modelo || "0"}/anos/${preco.ano}`
-      ).then((res) => setDados(res.data)).then(() => setIsModal(true))
+      ).then((res) => saveDados(res.data)).then(() => setIsModal(true))
       
   }
   fetchPrice()
